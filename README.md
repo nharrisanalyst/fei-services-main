@@ -1,3 +1,6 @@
+# For www.fire-exposure-index.com
+[fire-exposure-index.com](https://www.fire-exposure-index.com)
+
 This repository holds 
 a file to put services 
 and 
