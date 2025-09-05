@@ -1,4 +1,4 @@
-# For www.fire-exposure-index.com
+# For fire-exposure-index
 [fire-exposure-index.com](https://www.fire-exposure-index.com)
 
 This repository holds 
