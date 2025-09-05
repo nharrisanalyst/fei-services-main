@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:15
+    image: postgres:15-bullseye
     hostname: postgres
     restart: always
     shm_size: 128mb
@@ -21,18 +21,23 @@ services:
       - "8888:80"
   flask-api:
     build: 
-      context: ./services/api
+      context: ./services/fei-api
       dockerfile: Dockerfile
+    depends_on:
+      - db
+      - pipeline
     ports:
       - "5000:5000"
     volumes:
-      - ./services/api:/services/api 
+      - ./services/fei-api:/services/fei-api 
     env_file:
         - .db.env
   pipeline:
     build: 
-      context: .services/fei-data-etl
+      context: ./services/fei-data-etl
       dockerfile: Dockerfile
+    depends_on:
+      - db
     env_file:
         - .db.env
       
